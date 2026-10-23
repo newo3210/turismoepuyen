@@ -17,3 +17,8 @@ python serve.py
 Abrir http://127.0.0.1:8080/
 
 Es un espejo estático: formularios, búsquedas y el panel de WordPress no funcionan offline.
+
+## Log de cambios
+
+- mariano: 2026-10-23 — Agregamos este log de cambios (autor `mariano:` + fecha) para ir registrando el trabajo.
+- mariano: 2026-10-23 — Primera versión en GitHub: snapshot estático de turismoepuyen.com.ar y servidor local (`serve.py`).

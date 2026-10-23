@@ -1,0 +1,32 @@
+---
+description: Append README changelog entries as mariano with the date
+alwaysApply: true
+---
+
+# Log de cambios en el README
+
+Cada vez que se implemente un cambio en este proyecto (código, contenido, servidor local, docs o repo), agregar una entrada al log del README. No esperar a que el usuario lo pida.
+
+## Dónde
+
+- `README.md` en la raíz del repo
+- Sección: `## Log de cambios`
+- No crear un `CHANGELOG.md` aparte
+
+## Formato
+
+Entradas nuevas **arriba**, justo debajo del heading. Fecha = día de hoy (contexto de sesión). Autor fijo: `mariano:`
+
+```markdown
+- mariano: YYYY-MM-DD — descripción breve en español.
+```
+
+## Ejemplo
+
+```markdown
+## Log de cambios
+
+- mariano: 2026-10-23 — Servidor local para previsualizar el espejo estático.
+```
+
+Una línea por cambio. Si un mismo turno hace varias cosas, se pueden agrupar en una entrada.
