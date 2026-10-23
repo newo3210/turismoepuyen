@@ -20,5 +20,7 @@ Es un espejo estático: formularios, búsquedas y el panel de WordPress no funci
 
 ## Log de cambios
 
+- mariano: 2026-10-23 — Sacamos los módulos “Que Opina Los Turistas” y el formulario de suscripción del footer.
+- mariano: 2026-10-23 — Sacamos el widget “El tiempo en Epuyén” (tutiempo.net), que no funcionaba.
 - mariano: 2026-10-23 — Agregamos este log de cambios (autor `mariano:` + fecha) para ir registrando el trabajo.
 - mariano: 2026-10-23 — Primera versión en GitHub: snapshot estático de turismoepuyen.com.ar y servidor local (`serve.py`).
