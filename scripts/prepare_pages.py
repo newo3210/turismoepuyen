@@ -55,6 +55,9 @@ def prefix_base(text: str, base: str) -> str:
 
     escaped_root = re.compile(rf'(["\'])\\/(?!\\/)(?!{slug}\\/)')
     text = escaped_root.sub(rf'\1\\/{base.lstrip("/")}\\/', text)
+
+    srcset_rest = re.compile(rf'(,\s*)/(?!/)(?!{slug}/)')
+    text = srcset_rest.sub(rf'\1{base}/', text)
     return text
 
 
