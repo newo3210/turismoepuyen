@@ -1,0 +1,43 @@
+name: Actualizar Instagram
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Traer los dos últimos posts
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_GRAPH_HOST: ${{ secrets.IG_GRAPH_HOST }}
+        run: |
+          if [ -z "$IG_ACCESS_TOKEN" ]; then
+            echo "Falta el secret IG_ACCESS_TOKEN. Se omite la actualización."
+            exit 0
+          fi
+          python scripts/fetch_instagram.py
+
+      - name: Guardar cambios en main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mirror/data/instagram-posts.json mirror/media/instagram mirror/index.html
+          if git diff --cached --quiet; then
+            echo "Sin cambios de Instagram."
+            exit 0
+          fi
+          git commit -m "chore: refresh latest Instagram posts on the homepage"
+          git push

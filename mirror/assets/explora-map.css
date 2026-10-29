@@ -1,0 +1,257 @@
+/* Home map - 16:9 desktop embed of Lago Epuyén, stacked ratio on small screens. */
+
+.home-map {
+  background: var(--e-global-color-astglobalcolor4, #f3f1f6);
+  padding: 8px 24px 56px;
+}
+
+.home-map__inner {
+  max-width: 1422px;
+  margin: 0 auto;
+}
+
+.home-map__eyebrow {
+  display: block;
+  margin: 0 0 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1688a3;
+}
+
+.home-map__heading {
+  margin: 0 0 24px;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ast-global-color-2, #150e1f);
+}
+
+.home-map__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e8e4ee;
+  box-shadow: 0 8px 24px rgba(21, 14, 31, 0.08);
+}
+
+.home-map__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.home-map__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 20px 0 0;
+}
+
+.home-map__save {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 22px;
+  border: 2px solid #0d4e0e;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  color: #0d4e0e;
+  background: transparent;
+}
+
+.home-map__save:hover,
+.home-map__save:focus {
+  color: #fff;
+  background: #0d4e0e;
+}
+
+/* Home overlay hero - full-width photo with copy layered on a dark gradient (stay, Condorera, Piedra Pintada). */
+
+.home-stay {
+  background: #fff;
+  padding: 8px 24px 56px;
+}
+
+.home-stay__inner {
+  position: relative;
+  max-width: 1422px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(21, 14, 31, 0.08);
+  background: #150e1f;
+}
+
+.home-stay__inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(21, 14, 31, 0.82) 0%,
+    rgba(21, 14, 31, 0.35) 42%,
+    rgba(21, 14, 31, 0.12) 100%
+  );
+}
+
+.home-stay__photo {
+  margin: 0;
+  width: 100%;
+}
+
+.home-stay__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  background: #150e1f;
+}
+
+.home-stay__copy {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  max-width: 42rem;
+  padding: 40px 48px;
+}
+
+.home-stay__heading {
+  margin: 0 0 12px;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.home-stay__text {
+  margin: 0 0 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.home-stay__more {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 22px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+}
+
+.home-stay__more:hover,
+.home-stay__more:focus {
+  color: #150e1f;
+  background: #fff;
+}
+
+/* Home cultura video - full-bleed loop in place of the old photo strip. */
+
+.home-cultura {
+  background: #fff;
+  padding: 0 24px 8px;
+}
+
+.home-cultura__inner {
+  max-width: 1422px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #150e1f;
+}
+
+.home-cultura__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  background: #150e1f;
+}
+
+/* Explora actions - remaining Explora buttons under the intro copy. */
+
+.elementor-element-b46e728 > .elementor-container {
+  align-items: center;
+}
+
+.elementor-element-fb59338 .elementor-widget-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.explora-actions {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 100%;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+  margin: 0;
+}
+
+.explora-actions .elementor-button-wrapper {
+  margin: 0;
+}
+
+.elementor-5 .elementor-element.elementor-element-5d8ae24 > .elementor-widget-container {
+  padding-bottom: 0;
+}
+
+@media (max-width: 921px) {
+  .home-map {
+    padding: 8px 16px 40px;
+  }
+
+  .home-map__frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .home-stay {
+    padding: 8px 16px 40px;
+  }
+
+  .home-stay__photo img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .home-stay__copy {
+    padding: 24px 20px;
+    max-width: none;
+  }
+
+  .home-cultura {
+    padding: 0 16px 8px;
+  }
+
+  .home-cultura__video {
+    aspect-ratio: 16 / 9;
+  }
+}

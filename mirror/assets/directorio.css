@@ -1,0 +1,383 @@
+/* Lodging/service directory - cards, filters, Leaflet map, and booking actions. */
+
+.directorio {
+  --dir-ink: var(--ast-global-color-2, #150e1f);
+  --dir-muted: var(--ast-global-color-3, #584d66);
+  --dir-paper: #ffffff;
+  --dir-wash: var(--ast-global-color-4, #f3f1f6);
+  --dir-teal: #1688a3;
+  --dir-green: var(--ast-global-color-0, #165506);
+  --dir-line: rgba(21, 14, 31, 0.1);
+  max-width: 1422px;
+  margin: 0 auto;
+  padding: 8px 24px 64px;
+  color: var(--dir-ink);
+}
+
+.directorio__eyebrow {
+  display: block;
+  margin: 0 0 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dir-teal);
+}
+
+.directorio__title {
+  margin: 0 0 12px;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--dir-ink);
+}
+
+.directorio__lead {
+  margin: 0 0 28px;
+  max-width: 46rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--dir-muted);
+}
+
+.directorio__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.directorio__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.directorio__chip {
+  appearance: none;
+  border: 1px solid var(--dir-line);
+  background: var(--dir-paper);
+  color: var(--dir-ink);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.directorio__chip.is-active {
+  background: var(--dir-green);
+  border-color: var(--dir-green);
+  color: #fff;
+}
+
+.directorio__search {
+  flex: 1 1 220px;
+  max-width: 320px;
+}
+
+.directorio__search input {
+  width: 100%;
+  border: 1px solid var(--dir-line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  background: var(--dir-paper);
+}
+
+.directorio__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.directorio__map-wrap {
+  position: sticky;
+  top: 88px;
+}
+
+.directorio__map {
+  width: 100%;
+  height: min(68vh, 620px);
+  min-height: 360px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e8e4ee;
+  box-shadow: 0 8px 24px rgba(21, 14, 31, 0.08);
+}
+
+.directorio__map-note {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  color: var(--dir-muted);
+}
+
+.directorio__list {
+  display: grid;
+  gap: 14px;
+}
+
+.directorio__card {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 0;
+  background: var(--dir-paper);
+  border: 1px solid var(--dir-line);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  box-shadow: 0 4px 16px rgba(21, 14, 31, 0.05);
+}
+
+.directorio__card:hover,
+.directorio__card.is-active {
+  border-color: var(--dir-teal);
+  box-shadow: 0 8px 20px rgba(22, 136, 163, 0.16);
+}
+
+.directorio__card-photo {
+  min-height: 100%;
+  background: #d9d3e2 center / cover no-repeat;
+}
+
+.directorio__card-body {
+  padding: 14px 16px 16px;
+}
+
+.directorio__card-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 6px;
+}
+
+.directorio__tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e7f5f8;
+  color: var(--dir-teal);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.directorio__card-title {
+  margin: 0 0 4px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.directorio__card-meta {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--dir-muted);
+}
+
+.directorio__card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.directorio__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--dir-green);
+  background: transparent;
+  color: var(--dir-green);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.directorio__ico {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.directorio__btn:hover {
+  background: var(--dir-green);
+  color: #fff;
+}
+
+.directorio__btn--wa {
+  background: #25d366;
+  border-color: #25d366;
+  color: #fff;
+}
+
+.directorio__btn--wa:hover {
+  background: #1ebe57;
+  border-color: #1ebe57;
+  color: #fff;
+}
+
+.directorio__empty {
+  margin: 0;
+  padding: 24px;
+  background: var(--dir-wash);
+  border-radius: 8px;
+  color: var(--dir-muted);
+}
+
+.directorio__sheet {
+  width: min(520px, calc(100vw - 32px));
+  max-height: min(88vh, 720px);
+  border: 0;
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 20px 50px rgba(21, 14, 31, 0.25);
+}
+
+.directorio__sheet::backdrop {
+  background: rgba(21, 14, 31, 0.45);
+}
+
+.directorio__sheet-photo {
+  height: 180px;
+  background: #d9d3e2 center / cover no-repeat;
+}
+
+.directorio__sheet-body {
+  padding: 20px 22px 24px;
+}
+
+.directorio__sheet-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.directorio__sheet h3 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+}
+
+.directorio__sheet p {
+  margin: 0 0 8px;
+  color: var(--dir-muted);
+}
+
+.directorio__sheet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.leaflet-popup-content {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 10px 12px;
+}
+
+.leaflet-popup-content strong {
+  font-family: "Playfair Display", serif;
+}
+
+/* Page hero video - Alojamientos / Servicios top header over the title. */
+
+.elementor-672 .elementor-element-a241bc8 {
+  position: relative;
+  overflow: hidden;
+}
+
+.elementor-672 .elementor-element-a241bc8 > .elementor-background-video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.elementor-672 .elementor-element-a241bc8 .elementor-background-video-hosted {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.elementor-672 .elementor-element-a241bc8 > .elementor-background-overlay,
+.elementor-672 .elementor-element-a241bc8 > .elementor-container {
+  position: relative;
+  z-index: 1;
+}
+
+.elementor-672 .elementor-element-8184bd5 {
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .elementor-672 .elementor-element-a241bc8 > .elementor-background-video-container {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .directorio {
+    padding: 8px 16px 48px;
+  }
+
+  .directorio__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .directorio__map-wrap {
+    position: static;
+  }
+
+  .directorio__map {
+    aspect-ratio: 4 / 3;
+    height: auto;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .directorio__card {
+    grid-template-columns: 1fr;
+  }
+
+  .directorio__card-photo {
+    min-height: 140px;
+  }
+}

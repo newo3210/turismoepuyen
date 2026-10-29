@@ -1,0 +1,34 @@
+/* Maps page - two current Drive maps, clickable to open full size. */
+
+.mapas-nuevos {
+  display: grid;
+  gap: 28px;
+}
+
+.mapas-nuevos figure {
+  margin: 0;
+}
+
+.mapas-nuevos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(21, 14, 31, 0.08);
+  background: #f3f1f6;
+}
+
+.mapas-nuevos figcaption {
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ast-global-color-3, #584d66);
+}
+
+.mapas-nuevos__downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}

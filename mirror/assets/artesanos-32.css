@@ -1,0 +1,196 @@
+/* Home artesanos 32 - left photos, right copy with YouTube after the lead. */
+
+.elementor-5 .elementor-element.elementor-element-a94eba1 {
+  margin-top: 0;
+  padding: 40px 24px 56px !important;
+}
+
+.elementor-5 .elementor-element.elementor-element-a94eba1 > .elementor-background-overlay {
+  display: none;
+}
+
+.elementor-5 .elementor-element.elementor-element-6cbbaf6 > .elementor-element-populated {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.elementor-5 .elementor-element.elementor-element-a94eba1 .elementor-element-9479c8f {
+  display: none;
+}
+
+.artesanos-32 {
+  max-width: 1422px;
+  margin: 0 auto;
+  padding: 0;
+  color: var(--ast-global-color-2, #150e1f);
+}
+
+.artesanos-32__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px 48px;
+  align-items: start;
+}
+
+.elementor .artesanos-32 figure.artesanos-32__hero {
+  margin: 0 0 40px !important;
+}
+
+.artesanos-32__hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.artesanos-32__eyebrow {
+  display: block;
+  margin: 0 0 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1688a3;
+}
+
+.artesanos-32__heading {
+  margin: 0 0 16px;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.artesanos-32__lead,
+.artesanos-32 p {
+  margin: 0 0 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ast-global-color-3, #584d66);
+}
+
+.artesanos-32__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.artesanos-32__grid figure {
+  margin: 0;
+}
+
+.artesanos-32__grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}
+
+.artesanos-32__grid figcaption {
+  margin-top: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ast-global-color-3, #584d66);
+}
+
+.artesanos-32__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 8px 0 24px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #150e1f;
+}
+
+.artesanos-32__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.artesanos-32__awards {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.artesanos-32__awards li {
+  margin: 0 0 10px;
+  padding-left: 1.1em;
+  position: relative;
+  color: var(--ast-global-color-3, #584d66);
+}
+
+.artesanos-32__awards li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  background: #165506;
+}
+
+.artesanos-32__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.artesanos-32__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 22px;
+  border: 2px solid #1688a3;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+  background: #1688a3;
+}
+
+.artesanos-32__btn:hover {
+  color: #1688a3;
+  background: transparent;
+}
+
+.artesanos-32__btn--ghost {
+  color: #1688a3;
+  background: transparent;
+}
+
+.artesanos-32__btn--ghost:hover {
+  color: #fff;
+  background: #1688a3;
+}
+
+@media (max-width: 921px) {
+  .elementor-5 .elementor-element.elementor-element-a94eba1 {
+    padding: 24px 16px 40px !important;
+  }
+
+  .artesanos-32__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .artesanos-32__grid {
+    grid-template-columns: 1fr;
+  }
+}

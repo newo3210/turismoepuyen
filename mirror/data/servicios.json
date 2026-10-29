@@ -1,0 +1,200 @@
+{
+  "kind": "service",
+  "items": [
+    {
+      "id": "chofer-pablo",
+      "name": "Chofer Pablo",
+      "categories": [
+        "Remís"
+      ],
+      "responsable": "Chofer Pablo",
+      "address": "",
+      "zone": "",
+      "email": "",
+      "notes": "AUTO (TOYOTA ETIOS BLANCO)",
+      "phones": [
+        {
+          "raw": "2945411018",
+          "tel": "+542945411018",
+          "wa": "5492945411018"
+        }
+      ],
+      "lat": -42.23032,
+      "lng": -71.36436,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/maapa-cabezal.jpeg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945411018"
+    },
+    {
+      "id": "clickar",
+      "name": "Clickar",
+      "categories": [
+        "Remís"
+      ],
+      "responsable": "Clickar",
+      "address": "",
+      "zone": "",
+      "email": "",
+      "phones": [
+        {
+          "raw": "2944610388",
+          "tel": "+542944610388",
+          "wa": "5492944610388"
+        }
+      ],
+      "lat": -42.2272,
+      "lng": -71.36476,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/maapa-cabezal.jpeg",
+      "coordsApproximate": true,
+      "whatsapp": "5492944610388"
+    },
+    {
+      "id": "eputur-viajes-y-turismo",
+      "name": "Eputur Viajes y Turismo",
+      "categories": [
+        "Agencia"
+      ],
+      "responsable": "Eputur Viajes y Turismo",
+      "address": "",
+      "zone": "",
+      "email": "eputurismo@gmail.com",
+      "phones": [
+        {
+          "raw": "2945 64-0562",
+          "tel": "+542945640562",
+          "wa": "5492945640562"
+        }
+      ],
+      "lat": -42.22744,
+      "lng": -71.3682,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/actividades-1.jpeg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945640562"
+    },
+    {
+      "id": "puerto-bonito",
+      "name": "Puerto Bonito",
+      "categories": [
+        "Kayak"
+      ],
+      "responsable": "Puerto Bonito",
+      "address": "",
+      "zone": "",
+      "email": "chinobili73@gmail.com",
+      "phones": [
+        {
+          "raw": "0280-4693153",
+          "tel": "+542804693153",
+          "wa": "5492804693153"
+        }
+      ],
+      "lat": -42.218176,
+      "lng": -71.439989,
+      "page": "",
+      "image": "/wp-content/uploads/2024/05/lago-epuyen.jpg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/nSPei7dt8uNuMfoM6",
+      "whatsapp": "5492804693153"
+    },
+    {
+      "id": "puerto-bonito-aventura",
+      "name": "Puerto Bonito Aventura",
+      "categories": [
+        "Guía"
+      ],
+      "responsable": "Puerto Bonito Aventura",
+      "address": "",
+      "zone": "",
+      "email": "chinobili73@gmail.com",
+      "phones": [
+        {
+          "raw": "0280-4693153",
+          "tel": "+542804693153",
+          "wa": "5492804693153"
+        }
+      ],
+      "lat": -42.218176,
+      "lng": -71.439989,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/actividades-1.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/nSPei7dt8uNuMfoM6",
+      "whatsapp": "5492804693153"
+    },
+    {
+      "id": "rossi-paola-andrea",
+      "name": "Rossi Paola Andrea",
+      "categories": [
+        "Guía"
+      ],
+      "responsable": "Rossi Paola Andrea",
+      "address": "",
+      "zone": "",
+      "email": "paoepuyen@gmail.com",
+      "phones": [
+        {
+          "raw": "2945588805",
+          "tel": "+542945588805",
+          "wa": "5492945588805"
+        }
+      ],
+      "lat": -42.22768,
+      "lng": -71.3662,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/actividades-1.jpeg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945588805"
+    },
+    {
+      "id": "trekking-epuyen",
+      "name": "Trekking Epuyen",
+      "categories": [
+        "Guía"
+      ],
+      "responsable": "Trekking Epuyen",
+      "address": "",
+      "zone": "",
+      "email": "trekkingepuyen@gmail.com",
+      "phones": [
+        {
+          "raw": "2945469840",
+          "tel": "+542945469840",
+          "wa": "5492945469840"
+        }
+      ],
+      "lat": -42.2328,
+      "lng": -71.36348,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/actividades-1.jpeg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945469840"
+    },
+    {
+      "id": "verdasco-antonela",
+      "name": "Verdasco Antonela",
+      "categories": [
+        "Guía"
+      ],
+      "responsable": "Verdasco Antonela",
+      "address": "",
+      "zone": "",
+      "email": "a.verdasco89@gmail.com",
+      "phones": [
+        {
+          "raw": "2945639291",
+          "tel": "+542945639291",
+          "wa": "5492945639291"
+        }
+      ],
+      "lat": -42.22928,
+      "lng": -71.36308,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/actividades-1.jpeg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945639291"
+    }
+  ]
+}

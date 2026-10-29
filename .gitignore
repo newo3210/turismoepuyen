@@ -5,3 +5,10 @@ __pycache__/
 Thumbs.db
 resume-log.txt
 INFORME-WHOIS.md
+.env
+instagram.env
+googledrive/
+*.xlsx
+*-src.mp4
+epuyen-original-opti.mp4
+epuyen-header_opti_1-web.mp4

@@ -1,0 +1,476 @@
+{
+  "kind": "food",
+  "items": [
+    {
+      "id": "3-halcones",
+      "name": "3 Halcones",
+      "categories": [
+        "Confitería",
+        "Heladería"
+      ],
+      "responsable": "",
+      "address": "Los Cipreses N°654",
+      "zone": "Casco Urbano (Barrio Alto)",
+      "email": "fernando_gomez79@hotmail.es",
+      "phones": [
+        {
+          "raw": "2945-595555",
+          "tel": "+542945595555",
+          "wa": "5492945595555"
+        }
+      ],
+      "lat": -42.22683,
+      "lng": -71.350188,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/7bgNL4qqNQrep32C7",
+      "whatsapp": "5492945595555"
+    },
+    {
+      "id": "alfajores-epuyen",
+      "name": "Alfajores Epuyen",
+      "categories": [
+        "Fábrica"
+      ],
+      "responsable": "",
+      "address": "Los Picaflores y las Araucanias",
+      "zone": "Casco Urbano (Céntrico)",
+      "email": "",
+      "phones": [
+        {
+          "raw": "2945-499560",
+          "tel": "+542945499560",
+          "wa": "5492945499560"
+        }
+      ],
+      "lat": -42.228552,
+      "lng": -71.369766,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/V2r5B9eDQVvXyrtx8",
+      "whatsapp": "5492945499560"
+    },
+    {
+      "id": "alma-gaucha",
+      "name": "Alma Gaucha",
+      "categories": [
+        "Restobar"
+      ],
+      "responsable": "",
+      "address": "Los Retamos 2587",
+      "zone": "Zona Lago",
+      "email": "",
+      "phones": [],
+      "lat": -42.214616,
+      "lng": -71.426299,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/SREfc3kHotxHVuaZ6",
+      "whatsapp": "",
+      "pendingDetails": true
+    },
+    {
+      "id": "antu-quillen",
+      "name": "Antu Quillen",
+      "categories": [
+        "Regional",
+        "Restaurante"
+      ],
+      "responsable": "",
+      "address": "Parque Puerto Bonito",
+      "zone": "Zona Lago",
+      "email": "",
+      "phones": [],
+      "lat": -42.218176,
+      "lng": -71.439989,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/nSPei7dt8uNuMfoM6",
+      "whatsapp": "",
+      "pendingDetails": true
+    },
+    {
+      "id": "dni-bebidas",
+      "name": "Dni Bebidas",
+      "categories": [
+        "Fábrica"
+      ],
+      "responsable": "",
+      "address": "Ruta 40 Km 1874",
+      "zone": "Ruta 40",
+      "email": "kurruf.ginpatagonico@gmail.com",
+      "phones": [],
+      "lat": -42.22568,
+      "lng": -71.3424,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": true,
+      "whatsapp": ""
+    },
+    {
+      "id": "dulces-momentos",
+      "name": "Dulces Momentos",
+      "categories": [
+        "Confitería",
+        "Rotisería",
+        "Pastelería"
+      ],
+      "responsable": "",
+      "address": "Los Notros N° 412",
+      "zone": "Casco Urbano",
+      "email": "nancamposl@hotmail.com",
+      "phones": [
+        {
+          "raw": "1167343416",
+          "tel": "+541167343416",
+          "wa": "5491167343416"
+        },
+        {
+          "raw": "1150453265",
+          "tel": "+541150453265",
+          "wa": "5491150453265"
+        }
+      ],
+      "lat": -42.230179,
+      "lng": -71.364345,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/XcoURV7ch7j4a49X9",
+      "whatsapp": "5491167343416"
+    },
+    {
+      "id": "edu",
+      "name": "Edu",
+      "categories": [
+        "Rotisería"
+      ],
+      "responsable": "",
+      "address": "7 Colores N° 15",
+      "zone": "Casco Urbano (Céntrico)",
+      "email": "elizabethcasanova808@gmail.com",
+      "phones": [
+        {
+          "raw": "02945-499058",
+          "tel": "+542945499058",
+          "wa": "5492945499058"
+        },
+        {
+          "raw": "2945-528434",
+          "tel": "+542945528434",
+          "wa": "5492945528434"
+        }
+      ],
+      "lat": -42.228512,
+      "lng": -71.365986,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/v4rSD1HH1VVx7P8p6",
+      "whatsapp": "5492945499058"
+    },
+    {
+      "id": "el-cafe-de-las-chicas",
+      "name": "El Café de las Chicas",
+      "categories": [
+        "Cafetería"
+      ],
+      "responsable": "",
+      "address": "Los Picaflores N° 145",
+      "zone": "Casco Urbano (Céntrico)",
+      "email": "sl022405@gmail.com",
+      "phones": [
+        {
+          "raw": "2945689692",
+          "tel": "+542945689692",
+          "wa": "5492945689692"
+        }
+      ],
+      "lat": -42.228668,
+      "lng": -71.369854,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/bsLtaV7XzFypVf3GA",
+      "whatsapp": "5492945689692"
+    },
+    {
+      "id": "el-montanes",
+      "name": "El Montañés",
+      "categories": [
+        "Rotisería",
+        "Vinoteca"
+      ],
+      "responsable": "",
+      "address": "Av. los Halcones N°1308",
+      "zone": "Casco Urbano (Barrio Alto)",
+      "email": "danielrivarola1@hotmail.com",
+      "phones": [
+        {
+          "raw": "2944-897427",
+          "tel": "+542944897427",
+          "wa": "5492944897427"
+        }
+      ],
+      "lat": -42.229257,
+      "lng": -71.355434,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/mYF5DcZK8Q2g9gBz8",
+      "whatsapp": "5492944897427"
+    },
+    {
+      "id": "el-quincho-del-lago",
+      "name": "El Quincho del Lago",
+      "categories": [
+        "Restaurante"
+      ],
+      "responsable": "",
+      "address": "Los Cauquenes N° 2026",
+      "zone": "Zona Lago",
+      "email": "tueieclipse@gmail.com",
+      "phones": [
+        {
+          "raw": "2922704612",
+          "tel": "+542922704612",
+          "wa": "5492922704612"
+        }
+      ],
+      "lat": -42.209817,
+      "lng": -71.420511,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/Hosteria-foto-principal.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/GhvviGNRsWKuJroJ7",
+      "whatsapp": "5492922704612"
+    },
+    {
+      "id": "hop",
+      "name": "Hop",
+      "categories": [
+        "Restaurante",
+        "Cervecería"
+      ],
+      "responsable": "",
+      "address": "Los Retamos 2501",
+      "zone": "Zona Lago",
+      "email": "Cerveceriahop@gmail.com",
+      "phones": [
+        {
+          "raw": "2945510555",
+          "tel": "+542945510555",
+          "wa": "5492945510555"
+        }
+      ],
+      "lat": -42.215169,
+      "lng": -71.424849,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/Hosteria-foto-principal.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/bePLAp52waPkhWTRA",
+      "whatsapp": "5492945510555"
+    },
+    {
+      "id": "la-posada-de-ankaris",
+      "name": "La Posada de Ankaris",
+      "categories": [
+        "Restaurante"
+      ],
+      "responsable": "",
+      "address": "Los Retamos 2501",
+      "zone": "Casco Urbano (Ruta 40)",
+      "email": "laposadadeankaris@gmail.com",
+      "phones": [
+        {
+          "raw": "2945-527393",
+          "tel": "+542945527393",
+          "wa": "5492945527393"
+        }
+      ],
+      "lat": -42.233686,
+      "lng": -71.352749,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/Hosteria-foto-principal.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/7cgqQ1VwxqzWsE1p8",
+      "whatsapp": "5492945527393"
+    },
+    {
+      "id": "la-roti-de-las-chicas",
+      "name": "La Roti de las Chicas",
+      "categories": [
+        "Rotisería"
+      ],
+      "responsable": "",
+      "address": "Av. el Puma",
+      "zone": "Caco Urbano (Céntrico)",
+      "email": "",
+      "phones": [
+        {
+          "raw": "2944611152",
+          "tel": "+542944611152",
+          "wa": "5492944611152"
+        }
+      ],
+      "lat": -42.22794,
+      "lng": -71.35982,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": true,
+      "whatsapp": "5492944611152"
+    },
+    {
+      "id": "las-tranqueras",
+      "name": "Las Tranqueras",
+      "categories": [
+        "Fábrica"
+      ],
+      "responsable": "",
+      "address": "Ruta 40 Km 1875",
+      "zone": "Ruta 40",
+      "email": "lauraagra@yahoo.com.ar",
+      "phones": [
+        {
+          "raw": "2945-528989",
+          "tel": "+542945528989",
+          "wa": "5492945528989"
+        }
+      ],
+      "lat": -42.232148,
+      "lng": -71.352773,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/RcQfjBG3TTj8xrKa6",
+      "whatsapp": "5492945528989"
+    },
+    {
+      "id": "miradas-del-lago",
+      "name": "Miradas del Lago",
+      "categories": [
+        "Restaurante"
+      ],
+      "responsable": "",
+      "address": "Las Muticias N°638",
+      "zone": "Zona Lago",
+      "email": "Uriel.schw@gmail.com",
+      "phones": [
+        {
+          "raw": "11-54757976",
+          "tel": "+541154757976",
+          "wa": "5491154757976"
+        }
+      ],
+      "lat": -42.211849,
+      "lng": -71.434982,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/Hosteria-foto-principal.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/1uKLbwdXV8h6387M8",
+      "whatsapp": "5491154757976"
+    },
+    {
+      "id": "motev",
+      "name": "Motev",
+      "categories": [
+        "Rotisería"
+      ],
+      "responsable": "",
+      "address": "",
+      "zone": "Casco Urbano",
+      "email": "",
+      "phones": [],
+      "lat": -42.228676,
+      "lng": -71.369901,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/wHKWBWpPqrERZbyt7",
+      "whatsapp": "",
+      "pendingDetails": true
+    },
+    {
+      "id": "murrayana",
+      "name": "Murrayana",
+      "categories": [
+        "Cervecería"
+      ],
+      "responsable": "",
+      "address": "Los Retamos 2501",
+      "zone": "Casco Urbano",
+      "email": "arvejaspartidasbrewing@gmail.com",
+      "phones": [
+        {
+          "raw": "02945-499006",
+          "tel": "+542945499006",
+          "wa": "5492945499006"
+        },
+        {
+          "raw": "2945-510555",
+          "tel": "+542945510555",
+          "wa": "5492945510555"
+        }
+      ],
+      "lat": -42.22946,
+      "lng": -71.35454,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": true,
+      "whatsapp": "5492945499006"
+    },
+    {
+      "id": "passaparola",
+      "name": "Passaparola",
+      "categories": [
+        "Pizzería"
+      ],
+      "responsable": "",
+      "address": "El Michai N°188",
+      "zone": "Casco Urbano",
+      "email": "",
+      "phones": [
+        {
+          "raw": "2945699054",
+          "tel": "+542945699054",
+          "wa": "5492945699054"
+        }
+      ],
+      "lat": -42.229139,
+      "lng": -71.362613,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/SvoMmrbUZauzEJzn8",
+      "whatsapp": "5492945699054"
+    },
+    {
+      "id": "pilche",
+      "name": "Pilche",
+      "categories": [
+        "Chocolatería"
+      ],
+      "responsable": "",
+      "address": "Los Coipos N° 237",
+      "zone": "Casco Urbano (Barrio Alto)",
+      "email": "marizicari8@yahoo.com.ar",
+      "phones": [
+        {
+          "raw": "011-41648666",
+          "tel": "+541141648666",
+          "wa": "5491141648666"
+        }
+      ],
+      "lat": -42.23044,
+      "lng": -71.3524,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": true,
+      "whatsapp": "5491141648666"
+    }
+  ]
+}

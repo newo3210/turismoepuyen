@@ -1,0 +1,160 @@
+/* Instagram home cards - two latest posts with photo, title, caption, and permalink. */
+
+.ig-feed {
+  background-image: linear-gradient(
+    170deg,
+    var(--e-global-color-astglobalcolor5, #fff) 48%,
+    var(--e-global-color-astglobalcolor4, #f3f1f6) 48%
+  );
+  padding: 48px 24px 72px;
+}
+
+.ig-feed__inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.ig-feed__eyebrow {
+  display: block;
+  margin: 0 0 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1688a3;
+}
+
+.ig-feed__heading {
+  margin: 0 0 36px;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ast-global-color-2, #150e1f);
+}
+
+.ig-feed__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.ig-feed__card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(21, 14, 31, 0.08);
+}
+
+.ig-feed__card--teal .ig-feed__title {
+  color: #1688a3;
+}
+
+.ig-feed__card--green .ig-feed__title {
+  color: #0d4e0e;
+}
+
+.ig-feed__photo {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e8e4ee;
+}
+
+.ig-feed__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ig-feed__photo-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #584d66;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+}
+
+.ig-feed__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 28px 28px 32px;
+}
+
+.ig-feed__title {
+  margin: 0 0 12px;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.ig-feed__excerpt {
+  margin: 0 0 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ast-global-color-3, #584d66);
+}
+
+.ig-feed__more {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 22px;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.ig-feed__card--teal .ig-feed__more {
+  color: #fff;
+  background: #1688a3;
+  border-color: #1688a3;
+}
+
+.ig-feed__card--teal .ig-feed__more:hover,
+.ig-feed__card--teal .ig-feed__more:focus {
+  color: #1688a3;
+  background: transparent;
+}
+
+.ig-feed__card--green .ig-feed__more {
+  color: #0d4e0e;
+  background: transparent;
+  border-color: #0d4e0e;
+}
+
+.ig-feed__card--green .ig-feed__more:hover,
+.ig-feed__card--green .ig-feed__more:focus {
+  color: #fff;
+  background: #0d4e0e;
+}
+
+@media (max-width: 921px) {
+  .ig-feed {
+    padding: 40px 20px 56px;
+  }
+
+  .ig-feed__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

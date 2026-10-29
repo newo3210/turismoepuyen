@@ -1,0 +1,782 @@
+{
+  "kind": "stay",
+  "items": [
+    {
+      "id": "amaike",
+      "name": "Amaike",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Quetros N°38",
+      "zone": "El Pedregoso",
+      "email": "amaike.epuyen@hotmail.com",
+      "phones": [
+        {
+          "raw": "2944-714178",
+          "tel": "+542944714178",
+          "wa": "5492944714178"
+        }
+      ],
+      "lat": -42.146988,
+      "lng": -71.406869,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/ppL8yg9qYzxtqtfu8",
+      "whatsapp": "5492944714178"
+    },
+    {
+      "id": "cabanas-paty",
+      "name": "Cabañas Paty",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Callejon Doña Paula N°675",
+      "zone": "Zona Lago",
+      "email": "patyojeda756@gmail.com",
+      "phones": [
+        {
+          "raw": "2945653889",
+          "tel": "+542945653889",
+          "wa": "5492945653889"
+        }
+      ],
+      "lat": -42.215056,
+      "lng": -71.427003,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/gv4LM5kufpjhE9CH7",
+      "whatsapp": "5492945653889"
+    },
+    {
+      "id": "cabanas-del-epuyen",
+      "name": "Cabañas del Epuyen",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Parajes la Riconada",
+      "zone": "Riconada",
+      "email": "",
+      "phones": [
+        {
+          "raw": "2944299433",
+          "tel": "+542944299433",
+          "wa": "5492944299433"
+        }
+      ],
+      "lat": -42.235449,
+      "lng": -71.39936,
+      "page": "/cabanas-del-epuyen/",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/vcCDL2dogvR8bEYk9",
+      "whatsapp": "5492944299433"
+    },
+    {
+      "id": "cabure",
+      "name": "Cabure",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Callejon Doña Paula N° 812",
+      "zone": "Zona Lago",
+      "email": "cabureepuyen@gmail.com",
+      "phones": [
+        {
+          "raw": "1136527446",
+          "tel": "+541136527446",
+          "wa": "5491136527446"
+        }
+      ],
+      "lat": -42.217154,
+      "lng": -71.427607,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/TgQ69fbVPtEbN7Ah9",
+      "whatsapp": "5491136527446"
+    },
+    {
+      "id": "candi",
+      "name": "Candi",
+      "categories": [
+        "Casa"
+      ],
+      "responsable": "",
+      "address": "Los Condores 2166",
+      "zone": "Casco Urbano",
+      "email": "59@OUTLOOK.COM.AR",
+      "phones": [
+        {
+          "raw": "2945-650909",
+          "tel": "+542945650909",
+          "wa": "5492945650909"
+        }
+      ],
+      "lat": -42.215056,
+      "lng": -71.427003,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/djEwR1hFEHuQ5yfw8",
+      "whatsapp": "5492945650909"
+    },
+    {
+      "id": "carelhue",
+      "name": "Carelhue",
+      "categories": [
+        "Hostel"
+      ],
+      "responsable": "",
+      "address": "Av. los Retamos N°1923",
+      "zone": "Zona Lago",
+      "email": "juanpitesta@gmail.com",
+      "phones": [
+        {
+          "raw": "11-40331335",
+          "tel": "+541140331335",
+          "wa": "5491140331335"
+        }
+      ],
+      "lat": -42.21737,
+      "lng": -71.41895,
+      "page": "/cabanas-carelhue/",
+      "image": "/wp-content/uploads/2024/04/actividades-1.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/c2yozDc3P8n6tSCk7",
+      "whatsapp": "5491140331335"
+    },
+    {
+      "id": "casa-de-tato",
+      "name": "Casa de Tato",
+      "categories": [
+        "Casa"
+      ],
+      "responsable": "",
+      "address": "Siete Colores N°9",
+      "zone": "Cascco Urbano (Céntrico )",
+      "email": "",
+      "phones": [],
+      "lat": -42.23146,
+      "lng": -71.35934,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": true,
+      "whatsapp": "",
+      "pendingDetails": true
+    },
+    {
+      "id": "chacra-nadia",
+      "name": "Chacra Nadia",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "El Llanten N° 230",
+      "zone": "Zona Lago",
+      "email": "chacranadiaepuyen@gmail.com",
+      "phones": [
+        {
+          "raw": "2945639347",
+          "tel": "+542945639347",
+          "wa": "5492945639347"
+        }
+      ],
+      "lat": -42.212448,
+      "lng": -71.420937,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/U7Fi8ackp6u1Xqq49",
+      "whatsapp": "5492945639347"
+    },
+    {
+      "id": "chacra-pura-vida",
+      "name": "Chacra Pura Vida",
+      "categories": [
+        "Hostel"
+      ],
+      "responsable": "",
+      "address": "Av. los Condores N° 4375",
+      "zone": "Zona Vialidad",
+      "email": "chacrapuravida@gmail.com",
+      "phones": [
+        {
+          "raw": "02944-303639",
+          "tel": "+542944303639",
+          "wa": "5492944303639"
+        }
+      ],
+      "lat": -42.213876,
+      "lng": -71.386387,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/actividades-1.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/2mkEmDtLR8Popbcx5",
+      "whatsapp": "5492944303639"
+    },
+    {
+      "id": "complejo-alojamiento-epuyen",
+      "name": "Complejo Alojamiento Epuyen",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Av. los Retamos N°241",
+      "zone": "Zona Lago",
+      "email": "patriciadico32@gmail.com",
+      "phones": [
+        {
+          "raw": "0297-4947631",
+          "tel": "+542974947631",
+          "wa": "5492974947631"
+        }
+      ],
+      "lat": -42.21279,
+      "lng": -71.405046,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/bbbGmExmJXHjQ1ES7",
+      "whatsapp": "5492974947631"
+    },
+    {
+      "id": "dulces-momentos",
+      "name": "Dulces Momentos",
+      "categories": [
+        "Hostería"
+      ],
+      "responsable": "",
+      "address": "Los Notros 412",
+      "zone": "Casco Urbano",
+      "email": "nancamposl@hotmail.com",
+      "phones": [
+        {
+          "raw": "1167343416",
+          "tel": "+541167343416",
+          "wa": "5491167343416"
+        },
+        {
+          "raw": "1150453265",
+          "tel": "+541150453265",
+          "wa": "5491150453265"
+        }
+      ],
+      "lat": -42.230179,
+      "lng": -71.364345,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/Hosteria-foto-principal.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/XcoURV7ch7j4a49X9",
+      "whatsapp": "5491167343416"
+    },
+    {
+      "id": "el-arca-de-epuyen",
+      "name": "El Arca de Epuyen",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Av. los Condores N°2260",
+      "zone": "Casco Urbano (Céntrico)",
+      "email": "coronitil@yahoo.com.ar",
+      "phones": [
+        {
+          "raw": "2945-350914",
+          "tel": "+542945350914",
+          "wa": "5492945350914"
+        }
+      ],
+      "lat": -42.226336,
+      "lng": -71.375641,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/Bh8Yub5185V4Gn9H7",
+      "whatsapp": "5492945350914"
+    },
+    {
+      "id": "el-esquilador",
+      "name": "El Esquilador",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Paraje la Rinconada",
+      "zone": "La Rinconada",
+      "email": "informes@elesquilador.com.ar",
+      "phones": [
+        {
+          "raw": "02945-499019",
+          "tel": "+542945499019",
+          "wa": "5492945499019"
+        },
+        {
+          "raw": "2945 55-1352",
+          "tel": "+542945551352",
+          "wa": "5492945551352"
+        }
+      ],
+      "lat": -42.243267,
+      "lng": -71.372561,
+      "page": "/el-esquilador/",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/qzJ7dr2pRjMs2sJ89",
+      "whatsapp": "5492945499019"
+    },
+    {
+      "id": "el-morenito",
+      "name": "El Morenito",
+      "categories": [
+        "Camping"
+      ],
+      "responsable": "",
+      "address": "Puerto Bonito 1501",
+      "zone": "Zona Lago",
+      "email": "elmorenito3445@gmail.com",
+      "phones": [
+        {
+          "raw": "2945-330056",
+          "tel": "+542945330056",
+          "wa": "5492945330056"
+        }
+      ],
+      "lat": -42.21908,
+      "lng": -71.39072,
+      "page": "",
+      "image": "/wp-content/uploads/2024/05/lago-epuyen.jpg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945330056"
+    },
+    {
+      "id": "el-refugio-de-la-abuela",
+      "name": "El Refugio de la Abuela",
+      "categories": [
+        "Casa"
+      ],
+      "responsable": "",
+      "address": "Paraje la Rinconada",
+      "zone": "La Rinconada",
+      "email": "natashalezcano75@gmail.com",
+      "phones": [
+        {
+          "raw": "9 2804-679284",
+          "tel": "+542804679284",
+          "wa": "5492804679284"
+        }
+      ],
+      "lat": -42.241977,
+      "lng": -71.396583,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/hP99tkfpWANWK8yf6",
+      "whatsapp": "5492804679284"
+    },
+    {
+      "id": "el-refugio-del-lago",
+      "name": "El Refugio del Lago",
+      "categories": [
+        "Cabañas",
+        "Hostería",
+        "Dormis"
+      ],
+      "responsable": "",
+      "address": "Los Cauquenes N°2972",
+      "zone": "Zona Lago",
+      "email": "sofi.epuyen@gmail.com",
+      "phones": [
+        {
+          "raw": "02945-499025",
+          "tel": "+542945499025",
+          "wa": "5492945499025"
+        },
+        {
+          "raw": "2945638146",
+          "tel": "+542945638146",
+          "wa": "5492945638146"
+        }
+      ],
+      "lat": -42.210212,
+      "lng": -71.422446,
+      "page": "/refugio-del-lago/",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/48QUppyx5eDWuv2r6",
+      "whatsapp": "5492945499025"
+    },
+    {
+      "id": "el-santy",
+      "name": "El Santy",
+      "categories": [
+        "Camping",
+        "Dormis"
+      ],
+      "responsable": "",
+      "address": "Paraje el Pedregoso Ruta Nac. 40",
+      "zone": "El Pedregoso",
+      "email": "hemilcehebe88@gmail.com",
+      "phones": [
+        {
+          "raw": "2945-902519",
+          "tel": "+542945902519",
+          "wa": "5492945902519"
+        }
+      ],
+      "lat": -42.17448,
+      "lng": -71.35468,
+      "page": "",
+      "image": "/wp-content/uploads/2024/05/lago-epuyen.jpg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945902519"
+    },
+    {
+      "id": "el-vecino",
+      "name": "El Vecino",
+      "categories": [
+        "Casa"
+      ],
+      "responsable": "",
+      "address": "Amancay N°131",
+      "zone": "Casco Urbano (Céntrico)",
+      "email": "marinadel_mar@hotmail.com",
+      "phones": [
+        {
+          "raw": "2945-534626",
+          "tel": "+542945534626",
+          "wa": "5492945534626"
+        },
+        {
+          "raw": "02945-499294",
+          "tel": "+542945499294",
+          "wa": "5492945499294"
+        }
+      ],
+      "lat": -42.227825,
+      "lng": -71.371774,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/71PUaatezNu8apZXA",
+      "whatsapp": "5492945534626"
+    },
+    {
+      "id": "kecheu",
+      "name": "Kecheu",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "El Chin Chin N°235",
+      "zone": "Zona Lago",
+      "email": "fuser2007@hotmail.com",
+      "phones": [
+        {
+          "raw": "011-1535839831",
+          "tel": "+5491135839831",
+          "wa": "5491135839831"
+        }
+      ],
+      "lat": -42.211815,
+      "lng": -71.409676,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/4RWSdbfGG1Tn3RBK8",
+      "whatsapp": "5491135839831"
+    },
+    {
+      "id": "la-cordillera",
+      "name": "La Cordillera",
+      "categories": [
+        "Cabañas",
+        "Dormis",
+        "Camping"
+      ],
+      "responsable": "",
+      "address": "Los Cauquenes N°2150",
+      "zone": "Zona Lago",
+      "email": "lacordilleraepuyen@live.com",
+      "phones": [
+        {
+          "raw": "02945-499071",
+          "tel": "+542945499071",
+          "wa": "5492945499071"
+        },
+        {
+          "raw": "2945547507",
+          "tel": "+542945547507",
+          "wa": "5492945547507"
+        }
+      ],
+      "lat": -42.208816,
+      "lng": -71.414797,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/6fw4YhLguMCBVRCq7",
+      "whatsapp": "5492945499071"
+    },
+    {
+      "id": "la-montanesa",
+      "name": "La Montañesa",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Av. los Halcones N°1308",
+      "zone": "Casco Urbano (Barrio Alto)",
+      "email": "anygruiz@hotmail.com",
+      "phones": [
+        {
+          "raw": "1164157353",
+          "tel": "+541164157353",
+          "wa": "5491164157353"
+        },
+        {
+          "raw": "2944-897427",
+          "tel": "+542944897427",
+          "wa": "5492944897427"
+        }
+      ],
+      "lat": -42.235449,
+      "lng": -71.39936,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/vcCDL2dogvR8bEYk9",
+      "whatsapp": "5491164157353"
+    },
+    {
+      "id": "la-playita",
+      "name": "La Playita",
+      "categories": [
+        "Camping"
+      ],
+      "responsable": "",
+      "address": "Los Cauquenes N°3222",
+      "zone": "Zona Lago",
+      "email": "epuyenchubutarg@gmail.com",
+      "phones": [
+        {
+          "raw": "2945-416475",
+          "tel": "+542945416475",
+          "wa": "5492945416475"
+        }
+      ],
+      "lat": -42.21692,
+      "lng": -71.39272,
+      "page": "",
+      "image": "/wp-content/uploads/2024/05/lago-epuyen.jpg",
+      "coordsApproximate": true,
+      "whatsapp": "5492945416475"
+    },
+    {
+      "id": "la-plaza",
+      "name": "La Plaza",
+      "categories": [
+        "Casa"
+      ],
+      "responsable": "",
+      "address": "Los Maitenes N°128",
+      "zone": "Casco Urbano (Céntrico)",
+      "email": "flia_lucero@hotmail.com",
+      "phones": [
+        {
+          "raw": "02945-499131",
+          "tel": "+542945499131",
+          "wa": "5492945499131"
+        },
+        {
+          "raw": "280-4688013",
+          "tel": "+542804688013",
+          "wa": "5492804688013"
+        }
+      ],
+      "lat": -42.228606,
+      "lng": -71.370214,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/conocenos.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/7Gvh26nsGeem8We97",
+      "whatsapp": "5492945499131"
+    },
+    {
+      "id": "miradas-del-lago",
+      "name": "Miradas del Lago",
+      "categories": [
+        "Hostería"
+      ],
+      "responsable": "",
+      "address": "Las Muticias N°638",
+      "zone": "Zona Lago",
+      "email": "Uriel.schw@gmail.com",
+      "phones": [
+        {
+          "raw": "1154757976",
+          "tel": "+541154757976",
+          "wa": "5491154757976"
+        }
+      ],
+      "lat": -42.211849,
+      "lng": -71.434982,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/Hosteria-foto-principal.webp",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/1uKLbwdXV8h6387M8",
+      "whatsapp": "5491154757976"
+    },
+    {
+      "id": "nehemias",
+      "name": "Nehemias",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Siete Camisa N° 68",
+      "zone": "El Pedregoso",
+      "email": "mariaquilod@gmail.com",
+      "phones": [
+        {
+          "raw": "2944153379",
+          "tel": "+542944153379",
+          "wa": "5492944153379"
+        }
+      ],
+      "lat": -42.143637,
+      "lng": -71.409781,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/5f71DVsDFPVkHstp9",
+      "whatsapp": "5492944153379"
+    },
+    {
+      "id": "piuke",
+      "name": "Piuke",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Av. los Halcones N°1105",
+      "zone": "Casco Urbano (Barrio Alto)",
+      "email": "demilla_03@hotmail.com",
+      "phones": [
+        {
+          "raw": "2945-531260",
+          "tel": "+542945531260",
+          "wa": "5492945531260"
+        }
+      ],
+      "lat": -42.228338,
+      "lng": -71.357465,
+      "page": "/cabana-piuke/",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/rn6dHGJbBMgCcGvUA",
+      "whatsapp": "5492945531260"
+    },
+    {
+      "id": "reserva-los-cauces",
+      "name": "Reserva los Cauces",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "",
+      "zone": "",
+      "email": "",
+      "phones": [],
+      "lat": -42.141695,
+      "lng": -71.410137,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/MYEMyKrbgA4r7hQV7",
+      "whatsapp": "",
+      "pendingDetails": true
+    },
+    {
+      "id": "runan-nativo",
+      "name": "Runan Nativo",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Martin Pescador N°191",
+      "zone": "Zona Lago",
+      "email": "runannativo@gmail.com.ar",
+      "phones": [
+        {
+          "raw": "297-5934262",
+          "tel": "+542975934262",
+          "wa": "5492975934262"
+        }
+      ],
+      "lat": -42.212362,
+      "lng": -71.409384,
+      "page": "/runan-nativo/",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/q4TCC4ScrC48sBSF7",
+      "whatsapp": "5492975934262"
+    },
+    {
+      "id": "valle-de-epuyen",
+      "name": "Valle de Epuyen",
+      "categories": [
+        "Complejo",
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Av.los Condores N° 5913",
+      "zone": "Zona Puente de Los Vecinos",
+      "email": "",
+      "phones": [
+        {
+          "raw": "2944628895",
+          "tel": "+542944628895",
+          "wa": "5492944628895"
+        }
+      ],
+      "lat": -42.205323,
+      "lng": -71.39152,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/m87NmzG3uRFAUDhZ6",
+      "whatsapp": "5492944628895"
+    },
+    {
+      "id": "viento-sur-cabana",
+      "name": "Viento Sur Cabaña",
+      "categories": [
+        "Cabañas"
+      ],
+      "responsable": "",
+      "address": "Los Cauquenes N°2195",
+      "zone": "Zona Lago",
+      "email": "vivianah_06@hotmail.com",
+      "phones": [
+        {
+          "raw": "2944-921191",
+          "tel": "+542944921191",
+          "wa": "5492944921191"
+        }
+      ],
+      "lat": -42.211413,
+      "lng": -71.413687,
+      "page": "",
+      "image": "/wp-content/uploads/2024/04/alojamientos.jpeg",
+      "coordsApproximate": false,
+      "mapsUrl": "https://maps.app.goo.gl/bUcijBY27XNytdTDA",
+      "whatsapp": "5492944921191"
+    }
+  ]
+}
