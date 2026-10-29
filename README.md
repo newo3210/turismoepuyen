@@ -2,6 +2,16 @@
 
 Copia estática de [turismoepuyen.com.ar](https://turismoepuyen.com.ar) (snapshot 2026-10-20).
 
+## Vista previa para Turismo
+
+GitHub muestra el HTML como código. Para ver el sitio (y mandárselo a la Dirección) usá:
+
+**https://newo3210.github.io/turismoepuyen/**
+
+El repo es público: con ese link alcanza, no hace falta cuenta de GitHub. Se actualiza solo con cada push a main.
+
+La primera vez hay que activar Pages: *Settings → Pages → Build and deployment → Source: GitHub Actions*.
+
 ## Contenido
 
 - `mirror/` — HTML, CSS, JS e imágenes
@@ -44,6 +54,7 @@ Mientras no haya token, las tarjetas usan fotos demo locales y mandan a [instagr
 
 ## Log de cambios
 
+- mariano: 2026-10-29 — Preview público en GitHub Pages para que Turismo vea los avances sin abrir el HTML crudo.
 - mariano: 2026-10-29 — Comprimimos cultura y header2; cultura reemplaza la tira de fotos bajo Donde Alojarse, y header2 va de fondo en Alojamientos y Servicios.
 - mariano: 2026-10-29 — El MP4 web del header queda como `epuyen-header_opti_1.mp4` para reemplazo directo por FTP; el original pesado pasa a `-src`.
 - mariano: 2026-10-29 — Comprimimos el video del header a `epuyen-header_opti_1-web.mp4` (720p, sin audio, ~1,5 MB) y un poster para carga rápida.
