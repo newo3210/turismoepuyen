@@ -30,30 +30,32 @@ Abrir http://127.0.0.1:8080/
 
 Es un espejo estático: formularios, búsquedas y el panel de WordPress no funcionan offline.
 
-## Novedades de Instagram
+## Destacados de la home
 
-Instagram no permite scrapear el feed público. Los dos módulos de la home (antes “letras corpóreas” y “Semana Santa 2025”) se arman con la [Graph API](https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/media/) de una cuenta profesional.
-
-Hace falta:
-
-1. Que @turismoepuyen sea cuenta profesional (Business o Creator).
-2. Una app en [Meta for Developers](https://developers.facebook.com/) con permiso `instagram_business_basic`.
-3. Un token de acceso (y, si usás Facebook Login, el `IG_USER_ID`).
-
-Copiá `instagram.env.example` a `.env` y completá `IG_ACCESS_TOKEN`. Después:
-
-```powershell
-python scripts/fetch_instagram.py
-```
-
-Eso baja las fotos a `mirror/media/instagram/`, escribe `mirror/data/instagram-posts.json` y actualiza las tarjetas. **Conocer más** abre el post original en Instagram.
-
-En GitHub, cargá el secret `IG_ACCESS_TOKEN` (y opcional `IG_USER_ID`). El workflow `Actualizar Instagram` corre todos los días a las 08:00 ART, o a mano desde Actions.
-
-Mientras no haya token, las tarjetas usan fotos demo locales y mandan a [instagram.com/turismoepuyen](https://www.instagram.com/turismoepuyen/).
+Las dos tarjetas del lago/playas son contenido estático (ya no se scrapea Instagram). El script `scripts/fetch_instagram.py` y el workflow quedan por si más adelante se vuelve a conectar un feed.
 
 ## Log de cambios
 
+- mariano: 2026-11-02 — Alojamientos queda sticky con hold largo; fade más suave en los 01–04 de Por qué elegir.
+- mariano: 2026-11-02 — El video de cultura pasa a sticky con hold largo para que el delay se sienta antes de Conocé más.
+- mariano: 2026-11-02 — Mapa en 3 beats (mapa → distancias/pines → guardar ruta) con hold; delay en video, Conocé más y Artesanos.
+- mariano: 2026-11-02 — Suavizamos el reveal de stories, hold al final de cada módulo y restauramos las dos columnas de Conocé más.
+- mariano: 2026-11-02 — Parallax por etapas en destacados, alojamientos, conoce, piedra y por qué elegir; sin scrap de Instagram en la home.
+- mariano: 2026-11-02 — Sacamos el scroll con tensión del index; vuelve el scroll normal con fade de módulos.
+- mariano: 2026-10-30 — Cada módulo se centra y frena; el scroll suave vuelve con tensión y solo uno fuerte o insistente pasa al siguiente.
+- mariano: 2026-10-30 — Cada distancia bajo el mapa abre en Google Maps la ruta en auto desde Epuyén hasta ese destino.
+- mariano: 2026-10-30 — Debajo del mapa fijo, el siguiente scroll trae las distancias a El Bolsón, Bariloche, Esquel y Los Alerces en fade.
+- mariano: 2026-10-30 — El video del header se blanquea con el scroll hasta Donde alojarse; después entra el de cultura y se opaca igual hacia el blanco.
+- mariano: 2026-10-30 — El index vuelve al scroll continuo: el fade y el flotado de cada módulo siguen el gesto, sin bloquear la rueda.
+- mariano: 2026-10-30 — Al cargar el index, el primer scroll hacia abajo ya no se come módulos: se frenan alturas, inercia y el salto nativo hasta que cada slide se presenta.
+- mariano: 2026-10-30 — Todos los módulos del index esperan a presentarse (~1,4 s) antes de que el siguiente scroll pueda pasar al próximo.
+- mariano: 2026-10-30 — El video de cultura entra como slide a pantalla completa y se queda hasta el siguiente scroll; los módulos vuelven a fade suave y flotan desde abajo.
+- mariano: 2026-10-30 — En el index: sin Nuestras redes ni Condorera ni Punto Web; mapa de alojamientos a pantalla completa; fades más cortos con pausa entre módulos; el video se blanquea hasta Donde alojarse y después sigue el de cultura.
+- mariano: 2026-10-29 — El video del header arranca sin filtro y se oscurece a medida que los módulos se enciman para usarlo de fondo.
+- mariano: 2026-10-29 — El fondo del index queda fijo (video del header) y los módulos se cruzan más lento, como diapositivas sobre el paisaje.
+- mariano: 2026-10-29 — El index pasa a un módulo en foco por vez (pantalla completa); sacamos el parallax de fotos que corría el video del header.
+- mariano: 2026-10-29 — El parallax del index queda siempre activo (Windows lo apagaba) y el fade al entrar/salir se nota más.
+- mariano: 2026-10-29 — En el index, cada módulo se centra al scrollear con transiciones suaves, fade y parallax.
 - mariano: 2026-10-29 — Preview público en GitHub Pages para que Turismo vea los avances sin abrir el HTML crudo.
 - mariano: 2026-10-29 — Comprimimos cultura y header2; cultura reemplaza la tira de fotos bajo Donde Alojarse, y header2 va de fondo en Alojamientos y Servicios.
 - mariano: 2026-10-29 — El MP4 web del header queda como `epuyen-header_opti_1.mp4` para reemplazo directo por FTP; el original pesado pasa a `-src`.

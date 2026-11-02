@@ -1,0 +1,347 @@
+/* Home stage - native scroll; modules fade and float in over a pinned video. */
+
+body.home.home-parallax-ready {
+  overflow-x: clip;
+  background-color: #f4f1ec;
+}
+
+body.home.home-parallax-ready .site-content,
+body.home.home-parallax-ready .ast-container,
+body.home.home-parallax-ready #content,
+body.home.home-parallax-ready .site-main,
+body.home.home-parallax-ready .entry-content,
+body.home.home-parallax-ready .elementor-5 {
+  background: transparent !important;
+}
+
+@media (min-width: 922px) {
+  body.home {
+    overflow-x: clip;
+  }
+
+  body.home .home-module:not(.home-module--tall):not([data-home-story]) {
+    min-height: 100vh;
+  }
+
+  body.home .home-module--hero {
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  /* Story pin - sticky stage while scroll travel reveals each beat. */
+  body.home .home-module[data-home-story] {
+    display: block;
+    min-height: 0;
+    transform: none;
+  }
+
+  body.home .home-module[data-home-story] > [data-home-story-pin] {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+
+  /* Card / map stories - center their own stack without touching Elementor rows. */
+  body.home .ig-feed[data-home-story] > [data-home-story-pin],
+  body.home .home-stay[data-home-story] > [data-home-story-pin],
+  body.home .home-map[data-home-story] > [data-home-story-pin] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Cultura video - full-bleed sticky pin that holds before the next module. */
+  body.home .home-cultura[data-home-story] {
+    z-index: 1;
+  }
+
+  body.home .home-cultura[data-home-story] > [data-home-story-pin] {
+    display: block;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    padding: 0;
+    overflow: hidden;
+    background: #150e1f;
+  }
+
+  body.home .home-cultura[data-home-story] [data-story-beat] {
+    opacity: 1;
+    transform: none;
+    pointer-events: none;
+  }
+
+  /* Conocé / por qué - keep Elementor's horizontal columns. */
+  body.home .home-module.elementor-section[data-home-story] > .elementor-container[data-home-story-pin] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.home .home-module[data-home-story] [data-story-beat] {
+    --beat-in: 0;
+    opacity: var(--beat-in);
+    transform: translate3d(0, calc((1 - var(--beat-in)) * 40px), 0);
+    will-change: opacity, transform;
+    pointer-events: none;
+  }
+
+  /* Map canvas stays fully visible; chips stagger via --item-in, CTA via --beat-in. */
+  body.home .home-map[data-home-story] .home-map__directorio[data-story-beat],
+  body.home .home-map[data-home-story] .home-distances[data-story-beat] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  body.home .home-module[data-home-story] [data-story-beat].is-shown {
+    pointer-events: auto;
+  }
+}
+
+.home-stage-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: #fff;
+  opacity: var(--home-stage-dim, 0);
+}
+
+body.home.home-parallax-ready .home-module--hero .elementor-background-video-container,
+body.home.home-parallax-ready .home-module--hero .elementor-background-overlay {
+  position: fixed !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100vh !important;
+  overflow: hidden;
+  z-index: 0;
+}
+
+body.home.home-parallax-ready .home-module--hero .elementor-background-video-container {
+  opacity: calc(1 - var(--home-cultura-in, 0));
+}
+
+body.home.home-parallax-ready .home-module--hero .elementor-background-overlay {
+  opacity: 0 !important;
+}
+
+body.home.home-parallax-ready .home-module--hero .elementor-background-video-hosted {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transform: none !important;
+}
+
+body.home.home-parallax-ready .home-module--hero .elementor-shape {
+  display: none;
+}
+
+body.home.home-parallax-ready .home-cultura {
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+
+body.home.home-parallax-ready .home-cultura__inner {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: #150e1f;
+  opacity: 1;
+  pointer-events: none;
+}
+
+body.home.home-parallax-ready .home-cultura__video {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+body.home.home-parallax-ready .home-module {
+  --home-in: 0;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  background: transparent !important;
+  background-image: none !important;
+  opacity: var(--home-in);
+  pointer-events: none;
+  transform: translate3d(0, calc((1 - var(--home-in)) * 48px), 0);
+  will-change: opacity, transform;
+}
+
+body.home.home-parallax-ready .home-module.is-active {
+  z-index: 3;
+  pointer-events: auto;
+}
+
+body.home.home-parallax-ready .home-module.home-module--hero,
+body.home.home-parallax-ready .home-module.home-module--hero.is-active {
+  z-index: 0;
+  opacity: 1;
+  pointer-events: none;
+  transform: none;
+}
+
+body.home.home-parallax-ready .home-module.home-cultura,
+body.home.home-parallax-ready .home-module.home-cultura.is-active {
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none;
+  transform: none;
+}
+
+body.home.home-parallax-ready .home-map,
+body.home.home-parallax-ready .home-module[data-home-story] {
+  transform: none;
+  display: block;
+}
+
+body.home.home-parallax-ready .ig-feed,
+body.home.home-parallax-ready .home-map,
+body.home.home-parallax-ready .home-stay {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body.home.home-parallax-ready .elementor-5 .home-module.elementor-section:not(.home-module--hero) > .elementor-container {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(12, 20, 18, 0.2);
+  max-width: min(1422px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+  padding: 36px 28px;
+}
+
+body.home.home-parallax-ready .home-module .elementor-shape,
+body.home.home-parallax-ready .elementor-element-10f95e5,
+body.home.home-parallax-ready .elementor-element-1f60cd0,
+body.home.home-parallax-ready .elementor-element-9479c8f,
+body.home.home-parallax-ready .elementor-element-b3b354e,
+body.home.home-parallax-ready .elementor-element-3f8f0b8 {
+  display: none;
+}
+
+body.home.home-parallax-ready #colophon {
+  position: relative;
+  z-index: 4;
+}
+
+body.home.home-parallax-ready #donde-alojarse .home-stay__inner,
+body.home.home-parallax-ready #piedra-pintada .home-stay__inner {
+  width: min(1422px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+/* Por qué elegir - softer lift on each numbered block. */
+body.home.home-parallax-ready #porque-epuyen [data-story-beat] {
+  transform: translate3d(0, calc((1 - var(--beat-in)) * 56px), 0);
+}
+
+body.home.home-parallax-ready #donde-alojarse .home-stay__photo,
+body.home.home-parallax-ready #piedra-pintada .home-stay__photo {
+  height: 100%;
+}
+
+body.home.home-parallax-ready #donde-alojarse .home-stay__photo img,
+body.home.home-parallax-ready #piedra-pintada .home-stay__photo img {
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+@media (min-width: 922px) {
+  body.home.home-parallax-ready .home-cultura[data-home-story] {
+    display: block;
+    transform: none;
+    opacity: 1;
+  }
+
+  body.home.home-parallax-ready .ig-feed[data-home-story] > [data-home-story-pin] {
+    width: min(1140px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  body.home.home-parallax-ready .home-module.elementor-section[data-home-story] > .elementor-container[data-home-story-pin] {
+    width: min(1422px, calc(100% - 48px));
+    min-height: calc(100vh - 96px);
+  }
+
+  body.home.home-parallax-ready #conoce-epuyen > .elementor-container[data-home-story-pin] > .elementor-column {
+    width: 50%;
+  }
+
+  body.home.home-parallax-ready .home-module.elementor-section:not(.home-module--tall):not(.home-module--hero):not([data-home-story]) > .elementor-container {
+    min-height: auto;
+  }
+
+  body.home.home-parallax-ready .home-module--hero {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+
+  body.home.home-parallax-ready #porque-epuyen .elementor-element-42d8d26 > .elementor-container {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 921px) {
+  body.home.home-parallax-ready .home-module--hero .elementor-background-video-container,
+  body.home.home-parallax-ready .home-module--hero .elementor-background-overlay {
+    position: absolute !important;
+    height: 100%;
+  }
+
+  body.home.home-parallax-ready .home-cultura {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    opacity: 1;
+  }
+
+  body.home.home-parallax-ready .home-cultura__inner {
+    position: relative;
+    height: auto;
+    opacity: 1;
+  }
+
+  body.home.home-parallax-ready .home-module {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  body.home.home-parallax-ready .home-module[data-home-story] [data-story-beat] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  body.home.home-parallax-ready #donde-alojarse .home-stay__inner,
+  body.home.home-parallax-ready #piedra-pintada .home-stay__inner {
+    width: 100%;
+    height: auto;
+  }
+}

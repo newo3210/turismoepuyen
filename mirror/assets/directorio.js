@@ -228,6 +228,7 @@ function fillSheet(root, item) {
 // Directory render - chips, list, Leaflet map, and selection between cards and pins.
 function renderDirectory(root, payload) {
   const items = payload.items || [];
+  const mapOnly = root.hasAttribute("data-map-only");
   const listEl = root.querySelector("[data-list]");
   const filtersEl = root.querySelector("[data-filters]");
   const searchEl = root.querySelector("[data-search]");
@@ -319,7 +320,7 @@ function renderDirectory(root, payload) {
       marker.openPopup();
     }
     if (openSheet !== false) fillSheet(root, item);
-    history.replaceState(null, "", "#" + encodeURIComponent(id));
+    if (!mapOnly) history.replaceState(null, "", "#" + encodeURIComponent(id));
   }
 
   if (filtersEl) {
@@ -362,12 +363,24 @@ function renderDirectory(root, payload) {
     }).addTo(map);
     map.setView([-42.23, -71.365], 12);
     window.setTimeout(() => map.invalidateSize(), 200);
+    const host = root.closest(".home-module");
+    if (host) {
+      const syncSize = () => {
+        if (host.classList.contains("is-active")) window.setTimeout(() => map.invalidateSize(), 40);
+      };
+      new MutationObserver(syncSize).observe(host, { attributes: true, attributeFilter: ["class"] });
+    }
+    if (mapEl && typeof ResizeObserver === "function") {
+      new ResizeObserver(() => {
+        map.invalidateSize();
+      }).observe(mapEl);
+    }
   }
 
   refresh();
 
   const hashId = decodeURIComponent((location.hash || "").replace(/^#/, ""));
-  if (hashId) {
+  if (hashId && !mapOnly) {
     window.setTimeout(() => selectItem(hashId, true), 300);
   }
 }

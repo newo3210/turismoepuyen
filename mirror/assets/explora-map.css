@@ -1,51 +1,111 @@
-/* Home map - 16:9 desktop embed of Lago Epuyén, stacked ratio on small screens. */
+/* Home map - full-width stay pins, with a Google Maps CTA under the canvas. */
 
 .home-map {
-  background: var(--e-global-color-astglobalcolor4, #f3f1f6);
-  padding: 8px 24px 56px;
+  background: transparent;
+  padding: 0;
 }
 
-.home-map__inner {
-  max-width: 1422px;
-  margin: 0 auto;
+.home-map__stage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 72px 24px 32px;
+  min-height: 100vh;
 }
 
-.home-map__eyebrow {
+.home-map__directorio {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.home-map .directorio__map {
   display: block;
-  margin: 0 0 8px;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #1688a3;
-}
-
-.home-map__heading {
-  margin: 0 0 24px;
-  font-family: "Anton", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--ast-global-color-2, #150e1f);
-}
-
-.home-map__frame {
-  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: calc(100vh - 180px);
+  min-height: 520px;
+  border-radius: 16px;
   overflow: hidden;
-  border-radius: 8px;
   background: #e8e4ee;
-  box-shadow: 0 8px 24px rgba(21, 14, 31, 0.08);
+  box-shadow: 0 18px 48px rgba(12, 20, 18, 0.18);
 }
 
-.home-map__frame iframe {
-  position: absolute;
-  inset: 0;
+.home-distances {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.home-distances__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 100%;
-  height: 100%;
-  border: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 12px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 24px rgba(12, 20, 18, 0.12);
+  opacity: var(--item-in, 0);
+  transform: translate3d(0, calc((1 - var(--item-in, 0)) * 22px), 0);
+}
+
+.home-distances__item:hover,
+.home-distances__item:focus-visible {
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(12, 20, 18, 0.18);
+  outline: 2px solid #0d4e0e;
+  outline-offset: 1px;
+}
+
+.home-distances__icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: #165506;
+  background: rgba(22, 85, 6, 0.1);
+}
+
+.home-distances__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.home-distances__text {
+  margin: 0;
+  min-width: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.3;
+  color: #584d66;
+}
+
+.home-distances__text strong {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #150e1f;
 }
 
 .home-map__actions {
@@ -53,7 +113,7 @@
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
 }
 
 .home-map__save {
@@ -75,6 +135,38 @@
 .home-map__save:focus {
   color: #fff;
   background: #0d4e0e;
+}
+
+@media (min-width: 922px) {
+  .home-map__stage {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+
+  .home-map .directorio__map {
+    flex: 1 1 auto;
+    height: 0;
+    min-height: 240px;
+  }
+
+  .home-distances {
+    flex: 0 0 auto;
+    max-height: calc(var(--beat-in, 0) * 8.8rem);
+    margin-top: calc(var(--beat-in, 0) * 14px);
+  }
+
+  .home-map__actions {
+    flex: 0 0 auto;
+  }
+
+  /* Map pins - fade in with the distance beat, not on first land. */
+  .home-map .leaflet-overlay-pane,
+  .home-map .leaflet-marker-pane,
+  .home-map .leaflet-shadow-pane {
+    opacity: var(--map-pins, 0);
+    transition: opacity 0.7s ease;
+  }
 }
 
 /* Home overlay hero - full-width photo with copy layered on a dark gradient (stay, Condorera, Piedra Pintada). */
@@ -226,12 +318,26 @@
 }
 
 @media (max-width: 921px) {
-  .home-map {
-    padding: 8px 16px 40px;
+  .home-map__stage {
+    padding: 24px 16px 32px;
+    min-height: 0;
   }
 
-  .home-map__frame {
-    aspect-ratio: 4 / 3;
+  .home-map .directorio__map {
+    height: min(70vh, 520px);
+    min-height: 280px;
+  }
+
+  .home-distances {
+    grid-template-columns: 1fr;
+    max-height: none;
+    margin-top: 16px;
+    overflow: visible;
+  }
+
+  .home-distances__item {
+    opacity: 1;
+    transform: none;
   }
 
   .home-stay {
