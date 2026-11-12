@@ -22,11 +22,62 @@
   // Story timing defaults - hold after the last beat; pace stretches each beat.
   const STORY_HOLD = 0.45;
 
-  // Stage veil - whites out the pinned video as later modules sit on top of it.
+  // Stage veil - soft white wash while the hero still peeks through.
   const veil = document.createElement("div");
   veil.className = "home-stage-veil";
   veil.setAttribute("aria-hidden", "true");
   document.body.insertBefore(veil, document.body.firstChild);
+
+  // Stage floor - solid cream behind content once the hero video is fully covered.
+  const floor = document.createElement("div");
+  floor.className = "home-stage-floor";
+  floor.setAttribute("aria-hidden", "true");
+  document.body.insertBefore(floor, veil.nextSibling);
+
+  // Cover panel - cream sheet that finishes hiding the fixed hero video.
+  const coverPanel = document.querySelector(".home-cover-panel");
+
+  // Hero video node - muted backdrop; paused when covered or off-focus.
+  let heroVideo = null;
+
+  // Hero backdrop - keep a real fixed layer outside transformed ancestors.
+  function pinHeroBackdrop() {
+    if (!hero) return;
+    const hosted = hero.querySelector(".elementor-background-video-hosted");
+    const videoWrap = hero.querySelector(".elementor-background-video-container");
+    const poster = hosted && hosted.getAttribute("poster");
+    heroVideo = hosted || null;
+    if (poster) {
+      document.documentElement.style.setProperty("--home-hero-poster", `url("${poster}")`);
+    }
+    if (videoWrap) {
+      videoWrap.style.setProperty("display", "block", "important");
+    }
+    if (hosted) {
+      hosted.muted = true;
+      hosted.defaultMuted = true;
+      hosted.playsInline = true;
+    }
+  }
+
+  // Hero covered - cream panel has reached the top of the viewport.
+  function isHeroCovered() {
+    if (!coverPanel) return window.scrollY >= window.innerHeight * 0.92;
+    return coverPanel.getBoundingClientRect().top <= 0;
+  }
+
+  // Hero video sync - play only while visible; pause to save resources.
+  function syncHeroVideo(shouldPlay) {
+    if (!heroVideo) return;
+    if (shouldPlay) {
+      if (heroVideo.paused) {
+        const play = heroVideo.play && heroVideo.play();
+        if (play && typeof play.catch === "function") play.catch(() => {});
+      }
+      return;
+    }
+    if (!heroVideo.paused) heroVideo.pause();
+  }
 
   // Layout top - document position, ignoring sticky visual offsets.
   function layoutTop(el) {
@@ -73,6 +124,26 @@
     return Number.isFinite(n) && n > 0 ? n : 1;
   }
 
+  // Story dwell - extra rest after a beat is fully on, before the next starts.
+  function storyDwell(story) {
+    const n = Number(story.getAttribute("data-dwell"));
+    return Number.isFinite(n) && n >= 0 ? n : 0;
+  }
+
+  // Story timeline - fade length 1 plus optional dwell between beats.
+  function storyTimeline(story) {
+    const beats = storyBeats(story);
+    const dwell = storyDwell(story);
+    const slot = 1 + dwell;
+    return {
+      beats,
+      dwell,
+      slot,
+      // Last beat has no trailing dwell; data-hold covers the final pause.
+      end: Math.max(1, beats * slot - dwell),
+    };
+  }
+
   // Hold spacer - modules that only linger (e.g. cultura video) without layer beats.
   function sizeHolds() {
     holds.forEach((mod) => {
@@ -89,19 +160,19 @@
     });
   }
 
-  // Story height - paced travel per beat, then the module's hold.
+  // Story height - paced fade/dwell timeline, then the module's final hold.
   function sizeStories() {
     stories.forEach((story) => {
-      const beats = storyBeats(story);
+      const timeline = storyTimeline(story);
       const hold = storyHold(story);
       const pace = storyPace(story);
-      story.style.setProperty("--story-beats", String(beats));
+      story.style.setProperty("--story-beats", String(timeline.beats));
       if (!desktopQuery.matches) {
         story.style.removeProperty("height");
         story.style.removeProperty("min-height");
         return;
       }
-      const travel = (beats * pace + hold) * window.innerHeight;
+      const travel = (timeline.end * pace + hold) * window.innerHeight;
       story.style.height = `${travel}px`;
       story.style.minHeight = `${travel}px`;
     });
@@ -156,32 +227,40 @@
       dim = Math.min(0.88, clamp01((focusY - culturaBottom) / Math.max(1, lastCenter - culturaBottom)) * 0.88);
     }
 
+    const covered = isHeroCovered();
+    const showFloor = covered && culturaIn < 0.45;
+
     document.body.classList.toggle("is-stage-cultura", culturaIn > 0.45);
     document.body.classList.toggle("is-past-hero", Boolean(best && best !== hero));
+    document.body.classList.toggle("is-hero-covered", covered);
+    document.body.classList.toggle("is-hero-floor", showFloor);
     document.body.style.setProperty("--home-stage-dim", dim.toFixed(3));
     document.body.style.setProperty("--home-cultura-in", culturaIn.toFixed(3));
+
+    // Play only while the fixed hero is still visible; pause when covered or tab hidden.
+    syncHeroVideo(!covered && culturaIn < 0.2 && !document.hidden);
   }
 
-  // Map distances - stagger chips once the points beat is on.
+  // Map distances - soft stagger of chips once the points beat is on.
   function updateMapDistanceItems(amount) {
     if (!homeMap) return;
     homeMap.style.setProperty("--map-pins", amount.toFixed(3));
     homeMap.querySelectorAll(".home-distances__item").forEach((item, index) => {
-      const vis = softstep(amount * 3.4 - index * 0.55);
+      const vis = softstep(amount * 2.15 - index * 0.32);
       item.style.setProperty("--item-in", vis.toFixed(3));
     });
   }
 
-  // Story layers - soft scroll-linked reveal, then hold on the finished frame.
+  // Story layers - soft reveal, optional dwell between beats, then final hold.
   function updateStories() {
     stories.forEach((story) => {
       const layers = story.querySelectorAll("[data-story-beat]");
-      const beats = storyBeats(story);
+      const timeline = storyTimeline(story);
       const hold = storyHold(story);
       const pace = storyPace(story);
 
       if (!desktopQuery.matches) {
-        story.dataset.beat = String(beats - 1);
+        story.dataset.beat = String(timeline.beats - 1);
         story.style.setProperty("--story-progress", "1");
         layers.forEach((layer) => {
           layer.style.setProperty("--beat-in", "1");
@@ -194,11 +273,11 @@
       const top = layoutTop(story);
       const range = Math.max(1, story.offsetHeight - window.innerHeight);
       const progress = clamp01((window.scrollY - top) / range);
-      const revealUnits = Math.max(0.001, beats * pace);
+      const revealUnits = Math.max(0.001, timeline.end * pace);
       const units = revealUnits + hold;
       const reveal = clamp01((progress * units) / revealUnits);
-      const local = reveal * beats;
-      const beat = Math.min(beats - 1, Math.floor(local + 0.001));
+      const cursor = reveal * timeline.end;
+      const beat = Math.min(timeline.beats - 1, Math.floor(cursor / timeline.slot + 0.001));
 
       story.dataset.beat = String(beat);
       story.style.setProperty("--story-progress", progress.toFixed(3));
@@ -206,8 +285,10 @@
       let mapPoints = 0;
       layers.forEach((layer) => {
         const need = Number(layer.getAttribute("data-story-beat")) || 0;
-        // Beat 0 is already on when the pin lands; later beats ease in over the next unit.
-        const amount = softstep(local - need + 1);
+        // Beat 0 on at land. Without dwell, later beats stagger by 1; with dwell they wait a full slot.
+        const start =
+          need === 0 ? -1 : need * timeline.slot - (timeline.dwell > 0 ? 0 : 1);
+        const amount = softstep(cursor - start);
         layer.style.setProperty("--beat-in", amount.toFixed(3));
         layer.classList.toggle("is-shown", amount > 0.55);
         if (layer.classList.contains("home-distances")) mapPoints = amount;
@@ -241,16 +322,19 @@
   // Active module - fade each block with the scroll, keep the closest one interactive.
   function updateFocus() {
     ticking = false;
+    const focusY = window.scrollY + window.innerHeight / 2;
+
     if (!desktopQuery.matches) {
       modules.forEach((mod) => {
         mod.style.removeProperty("--home-in");
         mod.classList.remove("is-active", "is-leaving");
       });
       updateStories();
+      // Still cover/pause the fixed hero once the cream sheet owns the screen.
+      updateStage(focusY, hero && !isHeroCovered() ? hero : null);
       return;
     }
 
-    const focusY = window.scrollY + window.innerHeight / 2;
     let best = null;
     let bestVis = -1;
 
@@ -298,10 +382,21 @@
   document.documentElement.setAttribute("data-home-focus", "on");
   document.body.classList.add("home-parallax-ready");
   if (hero) hero.classList.add("is-active");
+  pinHeroBackdrop();
   relayout();
 
   window.addEventListener("scroll", requestFrame, { passive: true });
   window.addEventListener("resize", relayout);
-  window.addEventListener("load", relayout);
-  desktopQuery.addEventListener("change", relayout);
+  window.addEventListener("load", () => {
+    pinHeroBackdrop();
+    relayout();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) syncHeroVideo(false);
+    else requestFrame();
+  });
+  desktopQuery.addEventListener("change", () => {
+    pinHeroBackdrop();
+    relayout();
+  });
 })();

@@ -125,6 +125,42 @@
   gap: 14px;
 }
 
+/* Cards-only directory - full-width grid, no map column. */
+
+.directorio--cards .directorio__layout {
+  display: block;
+}
+
+.directorio--cards .directorio__list {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.directorio--cards .directorio__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.directorio--cards .directorio__card-photo {
+  min-height: 180px;
+  aspect-ratio: 16 / 10;
+}
+
+.directorio--cards .directorio__card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.directorio--cards .directorio__card-actions {
+  margin-top: auto;
+}
+
+.directorio--cards .directorio__empty {
+  grid-column: 1 / -1;
+}
+
 .directorio__card {
   display: grid;
   grid-template-columns: 112px minmax(0, 1fr);

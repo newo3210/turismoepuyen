@@ -36,6 +36,27 @@ Las dos tarjetas del lago/playas son contenido estático (ya no se scrapea Insta
 
 ## Log de cambios
 
+- mariano: 2026-11-12 — Actividades: video de YouTube (Primavera y Verano) arriba del listado.
+- mariano: 2026-11-12 — Servicios: grilla de tarjetas, sin mapa.
+- mariano: 2026-11-03 — Actividades: agregada tarjeta Piedra Pintada (07) con `/actividades/piedrapintada2.jpg`.
+- mariano: 2026-11-03 — Actividades: agregada tarjeta Pesca (02) con `/actividades/pesca2.jpeg`.
+- mariano: 2026-11-03 — Actividades: quitada la tarjeta La Condorera; renumeradas las demás.
+- mariano: 2026-11-03 — Actividades: tarjetones con parallax (fotos→títulos) y sin botones.
+- mariano: 2026-11-03 — Secciones: piso crema sigue el borde de las ondas (sin bordes transparentes del header).
+- mariano: 2026-11-03 — Home: imagen nueva de Piedra Pintada (`/actividades/piedrapintada.jpg`).
+- mariano: 2026-11-03 — Home: video de YouTube en Conocé Más de Epuyén (embed como artesanos).
+- mariano: 2026-11-03 — Home: texto actualizado del módulo Conocé Más de Epuyén.
+- mariano: 2026-11-03 — Secciones: parallax de header fijo que se esconde detrás de las ondulaciones (como el home).
+- mariano: 2026-11-03 — Destacados: sticky pin directo (centra y frena) y sin hueco vacío antes del mapa.
+- mariano: 2026-11-03 — Home: capa crema tras el contenido cuando el hero queda cubierto; video en pausa fuera de foco.
+- mariano: 2026-11-03 — Home: quitado fondo crema del cover (conflicto !important) para que el recorte montañoso se vea sobre el video fijo.
+- mariano: 2026-11-03 — Home: crema solo en panel+ondas (no en el cover) para que el recorte montañoso se vea sobre el video fijo.
+- mariano: 2026-11-03 — Home parallax: video/poster realmente fijo (sin will-change); contenido + ondas lo tapán al subir.
+- mariano: 2026-11-03 — Home: video fijo detrás; contenido sube tapándolo; ondas en el borde del primer bloque.
+- mariano: 2026-11-03 — Ondas del header: recorte máscara correcto (rotate 180) y visibles también en el home.
+- mariano: 2026-11-03 — Headers de secciones: sin título solapado y ondas mountains debajo (como el home).
+- mariano: 2026-11-02 — Mapa: sticky más largo y transiciones más suaves (mapa → pins → CTA → hold).
+- mariano: 2026-11-02 — Por qué elegir: dwell sticky real entre 01–04 (el siguiente no arranca hasta terminar la pausa).
 - mariano: 2026-11-02 — Alojamientos queda sticky con hold largo; fade más suave en los 01–04 de Por qué elegir.
 - mariano: 2026-11-02 — El video de cultura pasa a sticky con hold largo para que el delay se sienta antes de Conocé más.
 - mariano: 2026-11-02 — Mapa en 3 beats (mapa → distancias/pines → guardar ruta) con hold; delay en video, Conocé más y Artesanos.

@@ -1,0 +1,195 @@
+/* Section page heroes - clear overlay titles; fixed media covered by mountain waves. */
+
+.page-hero {
+  position: relative;
+  overflow: visible;
+}
+
+/* Keep the H1 for accessibility; hide the decorative line and title on the media. */
+.page-hero > .elementor-container .elementor-widget-divider,
+.page-hero > .elementor-container .elementor-widget-heading {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Parallax stage - site chrome goes transparent so fixed media can show through. */
+body.page-hero-parallax-ready {
+  overflow-x: clip;
+  background-color: transparent;
+}
+
+body.page-hero-parallax-ready .site-content,
+body.page-hero-parallax-ready .ast-container,
+body.page-hero-parallax-ready #content,
+body.page-hero-parallax-ready .site-main,
+body.page-hero-parallax-ready .entry-content,
+body.page-hero-parallax-ready [data-elementor-type="wp-page"] {
+  background: transparent !important;
+}
+
+/* Hero spacer - visual media lives in the fixed backdrop, not the scrolling box. */
+body.page-hero-parallax-ready .page-hero {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  z-index: 0;
+  transform: none !important;
+  will-change: auto !important;
+  overflow: visible;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+body.page-hero-parallax-ready .page-hero::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--page-hero-bg, none) center center / cover no-repeat;
+  opacity: 1;
+}
+
+body.page-hero-parallax-ready .page-hero .elementor-background-video-container,
+body.page-hero-parallax-ready .page-hero .elementor-background-overlay {
+  display: block !important;
+  position: fixed !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100vh !important;
+  overflow: hidden;
+  z-index: 0;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+body.page-hero-parallax-ready .page-hero .elementor-background-overlay {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+body.page-hero-parallax-ready .page-hero .elementor-background-video-hosted {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transform: none !important;
+}
+
+/* Built-in Elementor divider is replaced by the cover-sheet wave. */
+body.page-hero-parallax-ready .page-hero > .elementor-shape {
+  display: none !important;
+}
+
+/* Stage floor - follows the wave edge so side gutters never show the fixed header. */
+.page-hero-floor {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: var(--page-hero-floor-top, 100vh);
+  z-index: 1;
+  pointer-events: none;
+  background: #fff;
+  opacity: 0;
+}
+
+body.page-hero-parallax-ready.is-page-hero-floor .page-hero-floor {
+  opacity: 1;
+}
+
+body.page-hero-parallax-ready.is-page-hero-covered .page-hero::before,
+body.page-hero-parallax-ready.is-page-hero-covered .page-hero .elementor-background-video-container,
+body.page-hero-parallax-ready.is-page-hero-covered .page-hero .elementor-background-overlay {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+/* Cover sheet - first content block after the hero; wave cutout leads the curtain. */
+body.page-hero-parallax-ready .page-cover {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: 0;
+  overflow: visible;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body.page-hero-parallax-ready .page-cover-wave {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 96px;
+  margin: -96px 0 0;
+  line-height: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 3;
+  transform: rotate(180deg);
+  background: transparent;
+}
+
+body.page-hero-parallax-ready .page-cover-wave svg {
+  display: block;
+  width: calc(140% + 1.3px);
+  height: 96px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.page-hero-parallax-ready .page-cover-wave__fill {
+  fill: #fff;
+}
+
+body.page-hero-parallax-ready .page-cover-wave__fill--soft {
+  fill: rgba(255, 255, 255, 0.55);
+}
+
+body.page-hero-parallax-ready .page-cover-wave__fill--mid {
+  fill: rgba(255, 255, 255, 0.82);
+}
+
+/* Cream/white body under the wave - no rectangular paint over the fixed media. */
+body.page-hero-parallax-ready .page-cover-panel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+body.page-hero-parallax-ready .page-cover-panel > .elementor-container,
+body.page-hero-parallax-ready .page-cover-panel > .e-con,
+body.page-hero-parallax-ready .page-cover-panel > .elementor-element {
+  position: relative;
+  z-index: 2;
+}
+
+body.page-hero-parallax-ready #colophon {
+  position: relative;
+  z-index: 4;
+}
+
+@media (max-width: 921px) {
+  body.page-hero-parallax-ready .page-hero {
+    height: 70vh;
+    min-height: 70vh;
+    max-height: 70vh;
+  }
+
+  body.page-hero-parallax-ready .page-hero::before,
+  body.page-hero-parallax-ready .page-hero .elementor-background-video-container,
+  body.page-hero-parallax-ready .page-hero .elementor-background-overlay {
+    height: 70vh !important;
+  }
+}

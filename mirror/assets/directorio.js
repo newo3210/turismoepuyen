@@ -213,7 +213,7 @@ function fillSheet(root, item) {
     if (item.responsable) bits.push("Responsable: " + item.responsable);
     if (item.email && item.email.includes("@")) bits.push(item.email);
     if (item.notes) bits.push(item.notes);
-    if (item.coordsApproximate) {
+    if (item.coordsApproximate && root.querySelector("[data-map]")) {
       bits.push("El pin del mapa marca la zona, no la puerta exacta.");
     }
     if (item.pendingDetails) {

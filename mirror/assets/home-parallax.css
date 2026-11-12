@@ -2,7 +2,8 @@
 
 body.home.home-parallax-ready {
   overflow-x: clip;
-  background-color: #f4f1ec;
+  /* Video shows through gaps; content sheets cover it for depth. */
+  background-color: transparent;
 }
 
 body.home.home-parallax-ready .site-content,
@@ -44,12 +45,18 @@ body.home.home-parallax-ready .elementor-5 {
   }
 
   /* Card / map stories - center their own stack without touching Elementor rows. */
-  body.home .ig-feed[data-home-story] > [data-home-story-pin],
   body.home .home-stay[data-home-story] > [data-home-story-pin],
   body.home .home-map[data-home-story] > [data-home-story-pin] {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  /* Destacados - sticky stage keeps wave at top; panel centers the cards. */
+  body.home .ig-feed.home-module--cover[data-home-story] > [data-home-story-pin] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   /* Cultura video - full-bleed sticky pin that holds before the next module. */
@@ -98,6 +105,10 @@ body.home.home-parallax-ready .elementor-5 {
     pointer-events: auto;
   }
 
+  body.home .home-map[data-home-story] .home-map__actions[data-story-beat] {
+    transform: translate3d(0, calc((1 - var(--beat-in)) * 18px), 0);
+  }
+
   body.home .home-module[data-home-story] [data-story-beat].is-shown {
     pointer-events: auto;
   }
@@ -109,17 +120,70 @@ body.home.home-parallax-ready .elementor-5 {
   z-index: 1;
   pointer-events: none;
   background: #fff;
-  opacity: var(--home-stage-dim, 0);
+  /* Soft dim only while hero still peeks; floor takes over once covered. */
+  opacity: calc(var(--home-stage-dim, 0) * 0.35);
+}
+
+body.home.home-parallax-ready.is-hero-floor .home-stage-veil {
+  opacity: 0;
+}
+
+/* Stage floor - opaque cream under modules so the fixed video never shows through gaps. */
+.home-stage-floor {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: #f4f1ec;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+body.home.home-parallax-ready.is-hero-floor .home-stage-floor {
+  opacity: 1;
+}
+
+/* Hide fixed hero media once the cream sheet owns the viewport. */
+body.home.home-parallax-ready.is-hero-covered .home-module--hero::before,
+body.home.home-parallax-ready.is-hero-covered .home-module--hero .elementor-background-video-container {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+/*
+  Fixed backdrop - poster + video stay behind the page.
+  Hero must NOT use transform/will-change or fixed gets trapped and scrolls away.
+*/
+body.home.home-parallax-ready .home-module--hero {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  transform: none !important;
+  will-change: auto !important;
+  overflow: visible;
+}
+
+body.home.home-parallax-ready .home-module--hero::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--home-hero-poster, none) center center / cover no-repeat;
+  opacity: calc(1 - var(--home-cultura-in, 0));
 }
 
 body.home.home-parallax-ready .home-module--hero .elementor-background-video-container,
 body.home.home-parallax-ready .home-module--hero .elementor-background-overlay {
+  display: block !important;
   position: fixed !important;
   inset: 0;
   width: 100% !important;
   height: 100vh !important;
   overflow: hidden;
   z-index: 0;
+  transform: none !important;
+  will-change: auto !important;
 }
 
 body.home.home-parallax-ready .home-module--hero .elementor-background-video-container {
@@ -139,8 +203,97 @@ body.home.home-parallax-ready .home-module--hero .elementor-background-video-hos
   transform: none !important;
 }
 
+/* Hero spacer only - waves live on the first content sheet that covers the video. */
 body.home.home-parallax-ready .home-module--hero .elementor-shape {
-  display: none;
+  display: none !important;
+}
+
+/* Cover sheet - transparent shell; cream lives on wave + panel so the cutout stays visible. */
+body.home.home-parallax-ready .home-module--cover,
+body.home.home-parallax-ready .ig-feed.home-module--cover {
+  z-index: 2;
+  margin-top: 0;
+  padding: 0;
+  overflow: visible;
+  background: transparent !important;
+  background-image: none !important;
+  opacity: 1;
+  transform: none !important;
+  will-change: auto !important;
+  pointer-events: auto;
+}
+
+/* Sticky stage - wave at top, cards centered in the cream panel like other stories. */
+body.home.home-parallax-ready .home-cover-stage[data-home-story-pin] {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+body.home.home-parallax-ready .home-cover-wave {
+  position: relative;
+  left: 0;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 96px;
+  /* Pull the cutout up over the fixed video at the hero/content junction. */
+  margin: -96px 0 0;
+  line-height: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 3;
+  transform: rotate(180deg);
+  background: transparent;
+}
+
+body.home.home-parallax-ready .home-cover-wave svg {
+  display: block;
+  width: calc(140% + 1.3px);
+  height: 96px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.home.home-parallax-ready .home-cover-wave__fill {
+  fill: #f4f1ec;
+}
+
+body.home.home-parallax-ready .home-cover-wave__fill--soft {
+  fill: rgba(244, 241, 236, 0.55);
+}
+
+body.home.home-parallax-ready .home-cover-wave__fill--mid {
+  fill: rgba(244, 241, 236, 0.82);
+}
+
+/* Cream body under the wave - fills the sticky viewport and centers the cards. */
+body.home.home-parallax-ready .home-cover-panel {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  background: #f4f1ec;
+  padding: 1.25rem 0 2.5rem;
+  box-sizing: border-box;
+}
+
+body.home.home-parallax-ready .home-module--cover .ig-feed__inner {
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  width: min(1140px, calc(100% - 48px));
+  margin: 0 auto;
 }
 
 body.home.home-parallax-ready .home-cultura {
@@ -184,6 +337,21 @@ body.home.home-parallax-ready .home-module {
   pointer-events: none;
   transform: translate3d(0, calc((1 - var(--home-in)) * 48px), 0);
   will-change: opacity, transform;
+}
+
+/* Content after the hero sits above the fixed video so scroll feels layered. */
+body.home.home-parallax-ready .home-module:not(.home-module--hero):not(.home-cultura) {
+  isolation: isolate;
+}
+
+/* Cover shell stays opaque/active; cream paint is on wave + panel only. */
+body.home.home-parallax-ready .home-module.home-module--cover,
+body.home.home-parallax-ready .home-module.home-module--cover.is-active {
+  opacity: 1;
+  transform: none !important;
+  will-change: auto !important;
+  pointer-events: auto;
+  background: transparent !important;
 }
 
 body.home.home-parallax-ready .home-module.is-active {
@@ -230,7 +398,8 @@ body.home.home-parallax-ready .elementor-5 .home-module.elementor-section:not(.h
   padding: 36px 28px;
 }
 
-body.home.home-parallax-ready .home-module .elementor-shape,
+body.home.home-parallax-ready .home-module:not(.home-module--hero) .elementor-shape,
+body.home.home-parallax-ready .home-module--hero .elementor-shape:not(.elementor-shape-bottom),
 body.home.home-parallax-ready .elementor-element-10f95e5,
 body.home.home-parallax-ready .elementor-element-1f60cd0,
 body.home.home-parallax-ready .elementor-element-9479c8f,
@@ -277,7 +446,12 @@ body.home.home-parallax-ready #piedra-pintada .home-stay__photo img {
     opacity: 1;
   }
 
-  body.home.home-parallax-ready .ig-feed[data-home-story] > [data-home-story-pin] {
+  body.home.home-parallax-ready .ig-feed.home-module--cover[data-home-story] > [data-home-story-pin] {
+    width: 100%;
+    margin: 0;
+  }
+
+  body.home.home-parallax-ready .ig-feed:not(.home-module--cover)[data-home-story] > [data-home-story-pin] {
     width: min(1140px, calc(100% - 48px));
     margin: 0 auto;
   }
@@ -307,12 +481,6 @@ body.home.home-parallax-ready #piedra-pintada .home-stay__photo img {
 }
 
 @media (max-width: 921px) {
-  body.home.home-parallax-ready .home-module--hero .elementor-background-video-container,
-  body.home.home-parallax-ready .home-module--hero .elementor-background-overlay {
-    position: absolute !important;
-    height: 100%;
-  }
-
   body.home.home-parallax-ready .home-cultura {
     position: relative;
     height: auto;
